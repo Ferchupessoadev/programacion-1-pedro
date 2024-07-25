@@ -5,14 +5,34 @@ Por Ej. Si el usuario ingresa un 18 (dieciocho), el programa deberá emitir el r
 El Mayor Divisor de 18 es: 9
 */
 #include <iostream>
-#include <cmath>
 
-int main (int argc, char *argv[]) {
-	unsigned int num;
-	unsigned int divisor;
-	std::cout << "Ingresa un numero entero positivo: ";
-	std::cin >> num;
-	divisor = std::round((num / 2)); // rodendeo para arriba pero no da el resultado correcto
-	std::cout << "El mayor divisor de " << num << " es: " << divisor << std::endl;
-	return 0;
+int main() {
+    int numero;
+    
+    // Solicitar al usuario que ingrese un número entero positivo
+    std::cout << "Introduce un numero entero positivo: ";
+    std::cin >> numero;
+    
+    // Verificar que el número sea positivo
+    while (numero <= 0) {
+        std::cout << "El número debe ser entero y positivo, pendejo" << std::endl;
+		std::cout << "Introduce un numero entero positivo: ";
+		std::cin >> numero;
+    }
+    
+    int mayorDivisor = 1;
+
+    for (int i = 1; i <= numero / 2; ++i) {
+        if (numero % i == 0) {
+            mayorDivisor = i;
+        }
+    }
+
+    if (numero > 1) {
+        std::cout << "El mayor divisor distinto del numero " << numero << " es " << mayorDivisor << "." << std::endl;
+		return 0;
+    } 
+
+    std::cout << "El número 1 no tiene divisores distintos a sí mismo." << std::endl;
+    return 0;
 }
