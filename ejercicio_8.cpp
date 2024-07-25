@@ -13,9 +13,9 @@ int main(int argc, char *argv[]) {
     std::cout << "Ingrese un número natural: ";
     std::cin >> numero;
 
-    if (numero <= 0) {
+    while (numero <= 0) {
         std::cout << "El número ingresado no es válido. Debe ser un número natural." << std::endl;
-        return 1;
+		std::cin >> numero;
     }
 
     std::cout << "Los 5 Impares y Múltiplos de 3 a partir de " << numero << " son: ";
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 			}
 			contador++;
 		};
-		candidato += 2;
+		candidato += 1;
     }
     std::cout << std::endl;
     return 0;
