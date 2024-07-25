@@ -1,12 +1,12 @@
 /* 
 Menu
 */
-#include <iostram>
+#include <iostream>
 
 
 int main (int argc, char *argv[]) {
 	int op;
-	while (op == 4) {
+	while (op != 4) {
 		std::cout << "============" << std::endl;
 		std::cout << "1. Archivo" << std::endl;
 		std::cout << "2. Buscar" << std::endl;
@@ -33,27 +33,5 @@ int main (int argc, char *argv[]) {
 			break;
 		}
 	}
-}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	return 0;
 }
