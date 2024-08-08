@@ -1,25 +1,24 @@
 /*
-Realizar un programa que, tras leer un número entero positivo, determine el mayor
-divisor de dicho número.
-Por Ej. Si el usuario ingresa un 18 (dieciocho), el programa deberá emitir el resultado:
-El Mayor Divisor de 18 es: 9
+Realizar un programa que, tras leer un número entero positivo, determine el
+mayor divisor de dicho número. Por Ej. Si el usuario ingresa un 18 (dieciocho),
+el programa deberá emitir el resultado: El Mayor Divisor de 18 es: 9
 */
+
 #include <iostream>
 
 int main() {
-    int numero;
-    
+    int numero{0};
+
     // Solicitar al usuario que ingrese un número entero positivo
     std::cout << "Introduce un numero entero positivo: ";
     std::cin >> numero;
-    
-    // Verificar que el número sea positivo
+
     while (numero <= 0) {
-        std::cout << "El número debe ser entero y positivo, pendejo" << std::endl;
-		std::cout << "Introduce un numero entero positivo: ";
-		std::cin >> numero;
+        std::cout << "El número debe ser entero y positivo." << std::endl;
+        std::cout << "Introduce un numero entero positivo: ";
+        std::cin >> numero;
     }
-    
+
     int mayorDivisor = 1;
 
     for (int i = 1; i <= numero / 2; ++i) {
@@ -29,10 +28,12 @@ int main() {
     }
 
     if (numero > 1) {
-        std::cout << "El mayor divisor distinto del numero " << numero << " es " << mayorDivisor << "." << std::endl;
-		return 0;
-    } 
+        std::cout << "El mayor divisor distinto del numero " << numero << " es "
+                  << mayorDivisor << "." << std::endl;
+    } else {
+        std::cout << "El número 1 no tiene divisores distintos a sí mismo."
+                  << std::endl;
+    }
 
-    std::cout << "El número 1 no tiene divisores distintos a sí mismo." << std::endl;
     return 0;
 }
